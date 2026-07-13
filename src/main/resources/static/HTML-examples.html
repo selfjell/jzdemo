@@ -1,0 +1,76 @@
+<!-- Ex. 1 -->
+<button hx-get="/resource">
+    Click this!
+</button>
+
+<!-- Ex. 2 -->
+<button hx-put="/resource">
+    Click this!
+</button>
+
+<!-- Ex. 3 -->
+<form id="my-form">
+    <input name="att1" id="att1"/>
+    <input name="att2" id="att2"/>
+    <button hx-put="/resource" hx-include="#my-form">
+        Click this!
+    </button>
+</form>
+
+<!-- Ex. 4 -->
+<button hx-get="/resource"
+        hx-target="#resource-container">
+    Click this!
+</button>
+
+<!-- Ex. 5 -->
+<button hx-get="/resource"
+        hx-target="#resource-container"
+        hx-swap="beforeend">
+    Click this!
+</button>
+
+<!-- Ex. 6 -->
+<button hx-get="/resource"
+        hx-target="#resource-container"
+        hx-swap="beforeend"
+        hx-trigger="click once">
+    Click this!
+</button>
+
+<!-- Ex. 7 -->
+<button hx-get="/resource"
+        hx-target="#resource-container"
+        hx-swap="beforeend"
+        hx-trigger="customer-loaded-event from:body">
+    Click this!
+</button>
+
+<!-- Ex. 8 -->
+<div id="replacable">
+    Old content
+</div>
+<!-- Element triggering the call -->
+<button hx-get="/resource" hx-trigger="click">Click this!</button>
+
+<!-- Response -->
+<div hx-swap-oob="outerHTML" id="replacable">
+    New content
+</div>
+<div hx-swap-oob="outerHTML" id="another-replaceable-div">
+    New content somewhere else
+</div>
+
+
+<!-- AlpineJS -->
+<!-- Ex. 1 -->
+<div x-data="{ loading: false }">
+    <button x-on:click="loading = !loading;">Click this!</button>
+    <div x-show="loading">We are loading your content.. (maybe)</div>
+</div>
+
+<!-- Ex. 2 -->
+<div x-data="{ userInput: ''}">
+    <input x-model="userInput">
+    <p x-text="userInput"></p>
+</div>

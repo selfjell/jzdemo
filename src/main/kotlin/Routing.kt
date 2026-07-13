@@ -1,10 +1,12 @@
 package no.eksempel
 
+import io.ktor.http.ContentType
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import io.ktor.server.html.*
 import kotlinx.html.*
+import kotlinx.html.stream.createHTML
 
 fun Application.configureRouting() {
     routing {
@@ -22,6 +24,13 @@ fun Application.configureRouting() {
                     }
                 }
             }
+        }
+
+        get("/resource") {
+            val html = createHTML().button {
+                renderResourceFetchingButton("#replaceable")
+            }
+            call.respondText(html, ContentType.Text.Html)
         }
     }
 }
