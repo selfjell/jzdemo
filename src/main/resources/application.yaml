@@ -5,3 +5,4 @@ ktor:
     modules:
       - no.eksempel.HtmlDslKt.configureHtmlDsl
       - no.eksempel.RoutingKt.configureRouting
+  development: true

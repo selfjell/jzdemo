@@ -1,4 +1,4 @@
-package no.eksempel
+package no.eksempel.html
 
 import io.ktor.htmx.html.hx
 import io.ktor.utils.io.ExperimentalKtorApi
