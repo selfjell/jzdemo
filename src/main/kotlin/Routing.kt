@@ -10,6 +10,7 @@ import kotlinx.html.*
 import kotlinx.html.stream.createHTML
 import no.eksempel.html.index
 import no.eksempel.html.renderResourceFetchingButton
+import no.eksempel.html.superContent
 
 fun Application.configureRouting() {
     routing {
@@ -19,17 +20,10 @@ fun Application.configureRouting() {
             val html = createHTML().html { index() }
             call.respondText(html, ContentType.Text.Html)
         }
-        get("/html-dsl") {
-            call.respondHtml {
-                body {
-                    h1 { +"HTML" }
-                    ul {
-                        for (n in 1..10) {
-                            li { +"$n" }
-                        }
-                    }
-                }
-            }
+
+        get("/content") {
+            val html = createHTML().div { superContent() }
+            call.respondText(html, ContentType.Text.Html)
         }
 
         get("/resource") {

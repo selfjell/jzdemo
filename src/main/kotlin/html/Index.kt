@@ -1,7 +1,10 @@
 package no.eksempel.html
 
+import io.ktor.htmx.html.hx
+import io.ktor.utils.io.ExperimentalKtorApi
 import kotlinx.html.*
 
+@OptIn(ExperimentalKtorApi::class)
 fun HTML.index() {
     lang = "en"
     head {
@@ -32,6 +35,21 @@ fun HTML.index() {
     body {
         h1 {
             +"Hello JavaZone!"
+        }
+        div {
+            id = "replaceable"
+            h2 {
+                +"Would you like some more content?"
+            }
+            button {
+                attributes.hx {
+                    get = "/content"
+                    target = "#replaceable"
+                    trigger = "click"
+                    swap = "innerHTML"
+                }
+                +"Yes"
+            }
         }
     }
 }
