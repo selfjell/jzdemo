@@ -38,7 +38,13 @@ fun HTML.index() {
         }
         div {
             id = "replaceable"
-            attributes["x-data"] = "{ isLoading: false }"
+            attributes["x-data"] = "{ isLoading: false, errorMessage: '' }"
+            div {
+                attributes["x-show"] = "errorMessage !== ''"
+                p {
+                   attributes["x-text"] = "errorMessage"
+                }
+            }
             h2 {
                 +"Would you like some more content?"
             }
@@ -46,11 +52,13 @@ fun HTML.index() {
                 attributes.hx {
                     get = "/content"
                     target = "#replaceable"
-                    trigger = "click"
+                    trigger = "click throttle:1s"
                     swap = "innerHTML"
                 }
                 attributes["x-on:htmx:before-request"] = "isLoading = true;"
                 attributes["x-on:htmx:after-request"] = "isLoading = false;"
+                attributes["x-on:htmx:send-error"] = "errorMessage = 'Could not communicate with the server';"
+                attributes["x-on:htmx:response-error"] = "errorMessage = \$event.detail.xhr.responseText;"
                 +"Yes"
             }
             div {
