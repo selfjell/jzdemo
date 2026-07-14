@@ -38,6 +38,7 @@ fun HTML.index() {
         }
         div {
             id = "replaceable"
+            attributes["x-data"] = "{ isLoading: false }"
             h2 {
                 +"Would you like some more content?"
             }
@@ -48,7 +49,15 @@ fun HTML.index() {
                     trigger = "click"
                     swap = "innerHTML"
                 }
+                attributes["x-on:htmx:before-request"] = "isLoading = true;"
+                attributes["x-on:htmx:after-request"] = "isLoading = false;"
                 +"Yes"
+            }
+            div {
+                attributes["x-show"] = "isLoading"
+                p {
+                    +"Loading.."
+                }
             }
         }
     }
