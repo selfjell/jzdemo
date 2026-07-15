@@ -12,6 +12,7 @@ fun BUTTON.renderResourceFetchingButton() {
         swap = "beforeend"
         trigger = "customer-loaded-event from:body"
     }
+    +"Click this!"
 }
 
 @OptIn(ExperimentalKtorApi::class)
