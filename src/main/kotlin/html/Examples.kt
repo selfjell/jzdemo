@@ -25,3 +25,9 @@ fun BUTTON.renderResourceFetchingButton(containerToReplace: String) {
     }
     +"Click this!"
 }
+
+fun DIV.customText(customerName: String) {
+    div {
+        +customerName
+    }
+}
