@@ -26,8 +26,11 @@ fun BUTTON.renderResourceFetchingButton(containerToReplace: String) {
     +"Click this!"
 }
 
-fun DIV.customText(customerName: String) {
+fun DIV.customText(customer: Customer) {
     div {
-        +customerName
+        +customer.name
     }
 }
+
+
+data class Customer(val name: String)
