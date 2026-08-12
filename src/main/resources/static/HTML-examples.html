@@ -9,19 +9,21 @@
 </button>
 
 <!-- Ex. 3 -->
-<form id="my-form">
-    <input name="att1" id="att1"/>
-    <input name="att2" id="att2"/>
-    <button hx-put="/resource" hx-include="#my-form">
-        Click this!
-    </button>
-</form>
-
-<!-- Ex. 4 -->
 <button hx-get="/resource"
         hx-target="#resource-container">
     Click this!
 </button>
+
+<!-- Ex. 4 -->
+<form id="my-form">
+    <input name="att1" id="att1"/>
+    <input name="att2" id="att2"/>
+    <button hx-put="/resource"
+            hx-include="#my-form"
+            hx-target="#resource-container">
+        Click this!
+    </button>
+</form>
 
 <!-- Ex. 5 -->
 <button hx-get="/resource"

@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <button hx-get="/example"
+            hx-target="#resource-container"
+            hx-swap="beforeend"
+            hx-trigger="click once"
+    >
+        Click this!
+    </button>
+    <div id="resource-container">
+        <p>There be content here, aye</p>
+    </div>
+</body>
+</html>

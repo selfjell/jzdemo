@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js"
+            crossorigin="anonymous"
+            integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <form id="my-form">
+        <input name="att1" id="att1"/>
+        <input name="att2" id="att2"/>
+        <button hx-put="/example"
+                hx-include="#my-form"
+                hx-target="#resource-container">
+            Click this!
+        </button>
+    </form>
+</body>
+</html>

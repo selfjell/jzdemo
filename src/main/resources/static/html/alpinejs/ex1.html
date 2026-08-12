@@ -1,0 +1,13 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/styles.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.12/dist/cdn.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <div x-data="{ loading: false }">
+        <button x-on:click="loading = !loading;">Click this!</button>
+        <div x-show="loading">We are loading your content.. (maybe)</div>
+    </div>
+</body>
+</html>
