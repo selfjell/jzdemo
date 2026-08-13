@@ -15,6 +15,13 @@
 </button>
 
 <!-- Ex. 4 -->
+<button hx-get="/resource"
+        hx-target="#resource-container"
+        hx-swap="beforeend">
+    Click this!
+</button>
+
+<!-- Ex. 5 -->
 <form id="my-form">
     <input name="att1" id="att1"/>
     <input name="att2" id="att2"/>
@@ -24,13 +31,6 @@
         Click this!
     </button>
 </form>
-
-<!-- Ex. 5 -->
-<button hx-get="/resource"
-        hx-target="#resource-container"
-        hx-swap="beforeend">
-    Click this!
-</button>
 
 <!-- Ex. 6 -->
 <button hx-get="/resource"
@@ -60,7 +60,7 @@
     New content
 </div>
 <div hx-swap-oob="outerHTML" id="another-replaceable-div">
-    New content somewhere else
+    New content somewhere else on the page
 </div>
 
 

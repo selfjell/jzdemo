@@ -8,14 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-    <form id="my-form">
-        <input name="att1" id="att1"/>
-        <input name="att2" id="att2"/>
-        <button hx-put="/example"
-                hx-include="#my-form"
-                hx-target="#resource-container">
-            Click this!
-        </button>
-    </form>
+    <button hx-get="/example"
+            hx-target="#resource-container"
+            hx-swap="beforeend">
+        Click this!
+    </button>
+    <div id="resource-container">
+        <p>There be content here, aye</p>
+    </div>
 </body>
 </html>
